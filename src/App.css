@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=NTR&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'NTR', sans-serif;
+    line-height: 1.5;
+}
+:root{
+    --text-color:#121212;
+    --text-color-hover:#fff;
+    --bg-color:#f0f0f0;
+    --btn-color:#111111;
+    --btn-hover-color:#121212;
+
+}
+body{
+    width: 90%;
+    margin: auto;
+}
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* padding: 1rem; */
+    /* background-color: var(--bg-color); */
+    color: var(--text-color);
+}
+.logoImg{
+    width: auto;
+    height: 100px;
+}
+.navBar{
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    
+}
+.navBar img{
+    width: 20px;
+    height: auto;
+    margin:0 1rem ; 
+}
+.hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 85%;
+    margin: 0 auto;
+    height: 90vh;
+    /* background-color: var(--bg-color); */
+}
+.heroTitle{
+    font-size: 3rem;
+    font-weight: 500;
+    color: var(--text-color);
+    
+}
+.heroHeading{
+    display: flex;
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+    
+}
+.heroHeading h1{
+    margin-right:4rem;
+    margin-left: 1rem;
+}
+.heroSubTitle{
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--text-color);
+    width: 60%;
+}
+
+section{
+    width: 85%;
+    margin: auto;
+}
+.title{
+    font-size: 62px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.featuredContent{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    
+}
+.featuredItem{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    margin: 3rem auto;
+}
+.featureImg img{
+    width: 25rem;
+    height: auto;
+}
+.featureInfo p{
+    font-size: 1.5rem;
+    font-weight: 300;
+    line-height: 1.5;
+    color: var(--text-color);
+}
+.featureInfo h2{
+    font-size: 2.5rem;
+    font-weight: 500;
+    color: var(--text-color);
+}
+.featureInfo h4{
+    font-size: 1.5rem;
+    font-weight: 300;
+    color: var(--text-color);
+}
+.btn-products{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 100%; */
+    margin: 3rem auto;
+    padding: 1rem 2rem;
+    border-radius: 32px;
+    border: 1px solid var(--btn-color);
+    color: var(--text-color);
+    outline: none;
+    background-color: transparent;
+    transition-duration: 200ms;
+}
+.btn-products:hover{
+    background-color: var(--btn-hover-color);
+    color: var(--text-color-hover);
+    transition: all 200ms ease-in-out;
+}
