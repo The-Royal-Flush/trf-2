@@ -10,7 +10,7 @@ function Home() {
                 <div className="heroTitle">
                     <h6>We'll do it for you!</h6>
                     <div className='heroHeading'>
-                        <h1>Website </h1> <h1>Portfolio </h1><h1>Branding</h1>
+                        <h1>Websites </h1> <h1>Portfolios </h1><h1>Branding</h1>
                     </div>
                 </div>
                 <h3 className='heroSubTitle'>The Royal Flush designs and develops products for you.
