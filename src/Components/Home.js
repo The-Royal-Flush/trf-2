@@ -42,6 +42,7 @@ function Home() {
                     <h3>Creation</h3>
                 </div> */}
         <div className="featuredContent">
+          
           <div className="featuredItem">
             <div className="featureInfo">
               <p>Presence</p>
@@ -52,6 +53,7 @@ function Home() {
               <img src={PresenceImg} alt="Presence" />
             </div>
           </div>
+
           <div className="featuredItem">
             <div className="featureInfo">
               <p>Presence</p>
@@ -62,6 +64,7 @@ function Home() {
               <img src={PresenceImg} alt="Presence" />
             </div>
           </div>
+
           <div className="featuredItem">
             <div className="featureInfo">
               <p>Presence</p>
@@ -72,6 +75,7 @@ function Home() {
               <img src={PresenceImg} alt="Presence" />
             </div>
           </div>
+
         </div>
         <button className="btn-products">View all projects</button>
       </section>

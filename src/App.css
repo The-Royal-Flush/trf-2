@@ -17,11 +17,29 @@
     --btn-color:#111111;
     --btn-hover-color:#121212;
 
+    --scrollbar-color:#111;
+
 }
 body{
     width: 90%;
     margin: auto;
 }
+
+/* ---------- Custom Scrollbar 🟢 ---------- */
+::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    border-radius: 12px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background-color: var(--scrollbar-color);
+  }
+  /* ---------- Custom Scrollbar 🛑 ---------- */
+
 .header{
     display: flex;
     justify-content: space-between;
