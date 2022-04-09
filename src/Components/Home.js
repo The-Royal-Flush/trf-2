@@ -4,26 +4,52 @@ import Header from "../Components/Header";
 import PresenceImg from "../images/presence-featureImg.png";
 import SlanceImg from "../images/slance-featureImg.png";
 import TRFImg from "../images/trf-featureImg.png";
+import AnimatedCursor from "react-animated-cursor"
 
 import { useState } from "react";
 import Img1 from "../images/Rectangle_19.svg";
 import Img2 from "../images/Rectangle_21.svg";
 import Gif1 from "../images/gif1.gif";
 function Home() {
+
   const [over, setOver] = useState(false);
   const [image, setImage] = useState(true);
   return (
     <div>
       <Header />
+      <AnimatedCursor
+        innerSize={10}
+        outerSize={10}
+        color='0, 0, 0'
+        outerAlpha={0.2}
+        innerScale={0.7}
+        outerScale={5}
+        clickables={[
+          'a',
+          'input[type="text"]',
+          'input[type="email"]',
+          'input[type="number"]',
+          'input[type="submit"]',
+          'input[type="image"]',
+          'label[for]',
+          'select',
+          'img',
+          'h1',
+          'textarea',
+          'button',
+          '.link'
+        ]}
+
+      />
       <section className="hero">
         <div className="heroTitle">
           <h6>We'll do it for you!</h6>
           <div className="heroHeading text-stroke">
             <div
-              onMouseOver={() => setOver(true)}
-              onMouseOut={() => setOver(false)}
-              onMouseOver={() => setImage(false)}
-              onMouseOut={() => setImage(true)}
+            // onMouseOver={() => setOver(true)}
+            // onMouseOut={() => setOver(false)}
+            // onMouseOver={() => setImage(false)}
+            // onMouseOut={() => setImage(true)}
             >
               <h1>Websites</h1>
               <img
@@ -97,6 +123,49 @@ function Home() {
           deadlines into considerations and deliver you the product in the most
           promising way.
         </h3>
+      </section>
+
+      <section className="featured">
+
+        <div className="featuredContent">
+          <div className="featuredItem">
+            <div className="featureInfo">
+              {/* <p>Presence</p> */}
+              <h2>Websites and Platforms</h2>
+              <h4>In our team, the designers and developers work alongside each other. It is exciting to see them in action to create products which is perfectly suited to its users.</h4>
+              <button className="btn-products  btn-service-inner">View all projects</button>
+            </div>
+            <div className="featureImg">
+              <img src={PresenceImg} alt="Presence" />
+            </div>
+          </div>
+
+          <div className="featuredItem">
+            <div className="featureInfo">
+              {/* <p>Slance</p> */}
+              <h2>Design Concepts</h2>
+              <h4>We design what we think. Imaginations come to life with awesome design concepts and prototypes presented. We make people time travel!!</h4>
+              <div className="services-btn">
+                <button className="btn-products  btn-service-inner ">View all projects</button>
+              </div>
+            </div>
+            <div className="featureImg">
+              <img src={SlanceImg} alt="Presence" />
+            </div>
+          </div>
+          <div className="featuredItem">
+            <div className="featureInfo">
+              {/* <p>TRF</p> */}
+              <h2>Performance SEOs</h2>
+              <h4>Want to get yourself noticed, we have devised strategies and tools to make you visible on the web. The brands are now recognized more!</h4>
+              <button className="btn-products  btn-service-inner">View all projects</button>
+            </div>
+            <div className="featureImg">
+              <img src={TRFImg} alt="Presence" />
+            </div>
+          </div>
+        </div>
+
       </section>
     </div>
   );
