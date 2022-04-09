@@ -22,6 +22,14 @@ body{
     width: 90%;
     margin: auto;
 }
+
+/* Utility Class */
+.text-stroke{
+    -webkit-text-stroke: 0.01px #939393;
+    -webkit-text-fill-color: transparent;
+}
+
+
 .header{
     display: flex;
     justify-content: space-between;
@@ -29,15 +37,21 @@ body{
     /* padding: 1rem; */
     /* background-color: var(--bg-color); */
     color: var(--text-color);
+
+    margin-top: 2rem;
 }
 .logoImg{
     width: auto;
-    height: 100px;
+    height: 80px;
 }
 .navBar{
     display: flex;
     justify-content: space-between;
     align-items: baseline;
+
+    font-size: 20px;
+    letter-spacing: -.03em;
+    
     
 }
 .navBar img{
@@ -63,18 +77,23 @@ body{
 .heroTitle h6{
     font-size: 16px;
 }
+
+
 .heroHeading{
     display: flex;
     font-size: 3.5rem;
     font-weight: 500;
     color: var(--text-color);
+
+    
+
+    justify-content: space-between;
     
 }
 .heroHeading h1{
-    margin-right:4rem;
-    margin-left: 1rem;
+    
 }
-.heroSubTitle{
+.heroSubTitle,.servicesSubTitle{
     font-size: 1.5rem;
     font-weight: 300;
     color: var(--text-color);
@@ -108,22 +127,50 @@ section{
 .featureImg img{
     width: 25rem;
     height: auto;
+
+    height: 90vh;
+    width: 54.925vh;
+    max-width: 43vw;
+    max-height: 71.81vw;
+    text-align: left;
 }
+
+.featureInfo{
+    width: 520px
+}
+
+
 .featureInfo p{
-    font-size: 1.5rem;
+    /* font-size: 1.5rem;
     font-weight: 300;
-    line-height: 1.5;
+    line-height: 1.5; */
     color: var(--text-color);
+
+
+    font-size: 1.5vw;
+    font-weight: 400;
+    line-height: 1;
 }
 .featureInfo h2{
-    font-size: 2.5rem;
-    font-weight: 500;
+    /* font-size: 2.5rem; */
+    font-weight: 500; 
     color: var(--text-color);
+
+    margin: 30px 0 0 0;
+    font-size: 2.58333vw;
+    line-height: 133%;
+    letter-spacing: -.03em;
 }
 .featureInfo h4{
-    font-size: 1.5rem;
+    /* font-size: 1.5rem; */
     font-weight: 300;
-    color: var(--text-color);
+    /* color: var(--text-color); */
+
+    margin: 30px 0 0 0;
+    color: #6f6f6f;
+    font-size: 1.16667vw;
+    letter-spacing: .04375em;
+    line-height: 156%;
 }
 .btn-products{
     display: flex;
@@ -209,6 +256,15 @@ span {
 }
 .cursor{
   pointer-events:none;
+}
+
+.services{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* align-items: center; */
+    height: 60vh;
+    margin: 3rem auto;
 }
 
 /* ---------------------- */

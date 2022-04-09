@@ -1,5 +1,5 @@
 import {Link} from 'react-router-dom'
-import Logo from '../images/trf_logo.png';
+import Logo from '../images/trfLogoBlack.svg';
 import Menu from '../images/Menu.png';
 function Header() {
     return (  
