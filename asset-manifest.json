@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/trf-2/static/css/main.18cea865.css",
+    "main.js": "/trf-2/static/js/main.fd20e6a2.js",
+    "static/js/787.0a1a28ff.chunk.js": "/trf-2/static/js/787.0a1a28ff.chunk.js",
+    "static/media/gif1.gif": "/trf-2/static/media/gif1.86962ad2cb63e685997f.gif",
+    "static/media/Rectangle_19.svg": "/trf-2/static/media/Rectangle_19.967841b361d71f91d6e56929e4042f4c.svg",
+    "static/media/Rectangle_21.svg": "/trf-2/static/media/Rectangle_21.6e1cc6bee485f86241d77baee56ff5ab.svg",
+    "static/media/slance-featureImg.png": "/trf-2/static/media/slance-featureImg.2f47c49c03700bb99703.png",
+    "static/media/Averta.otf": "/trf-2/static/media/Averta.397a1b0637bd93ee3284.otf",
+    "static/media/trfLogoBlack.svg": "/trf-2/static/media/trfLogoBlack.73e10948bae47f4d5e859efdad2bcc7a.svg",
+    "index.html": "/trf-2/index.html",
+    "main.18cea865.css.map": "/trf-2/static/css/main.18cea865.css.map",
+    "main.fd20e6a2.js.map": "/trf-2/static/js/main.fd20e6a2.js.map",
+    "787.0a1a28ff.chunk.js.map": "/trf-2/static/js/787.0a1a28ff.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.18cea865.css",
+    "static/js/main.fd20e6a2.js"
+  ]
+}
