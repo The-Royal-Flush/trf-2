@@ -26,8 +26,14 @@ body{
 /* Utility Class */
 .text-stroke{
     -webkit-text-stroke: 0.01px #939393;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color: #fff;
+    transition: all .2s ease-in-out;
 }
+
+.c-pointer:hover{
+    cursor: pointer;
+}
+
 
 
 .header{
@@ -38,8 +44,10 @@ body{
     /* background-color: var(--bg-color); */
     color: var(--text-color);
 
-    margin-top: 2rem;
+    margin-top: 2rem;    
 }
+
+
 .logoImg{
     width: auto;
     height: 80px;
@@ -90,9 +98,16 @@ body{
     justify-content: space-between;
     
 }
-.heroHeading h1{
-    
+
+.heroHeading h1:hover{
+    -webkit-text-fill-color: #000;
+    -webkit-text-stroke: 0.05px #000000;
+
+    transition: all .2s ease-in;
 }
+
+
+
 .heroSubTitle,.servicesSubTitle{
     font-size: 1.5rem;
     font-weight: 300;

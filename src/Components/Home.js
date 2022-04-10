@@ -44,7 +44,8 @@ function Home() {
       <section className="hero">
         <div className="heroTitle">
           <h6>We'll do it for you!</h6>
-          <div className="heroHeading text-stroke">
+
+          <div className="heroHeading text-stroke c-pointer">
             <div
             // onMouseOver={() => setOver(true)}
             // onMouseOut={() => setOver(false)}
@@ -58,6 +59,7 @@ function Home() {
                 src={over ? Gif1 : Img1}
               />
             </div>
+
             <h1>Portfolios</h1>
             <h1>Branding</h1>
           </div>
