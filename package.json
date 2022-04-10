@@ -2,7 +2,9 @@
   "name": "trf-2",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://the-royal-flush.github.io/trf-2/",
+
+  "homepage": "https://The-Royal-Flush.github.io/trf-2",
+
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
     "@testing-library/react": "^12.1.2",
