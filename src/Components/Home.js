@@ -10,6 +10,7 @@ import { useState } from "react";
 import Img1 from "../images/Rectangle_19.svg";
 import Img2 from "../images/Rectangle_21.svg";
 import Gif1 from "../images/gif1.gif";
+import Footer from "./Footer";
 
 function Home() {
 
@@ -167,6 +168,8 @@ function Home() {
         </div>
 
       </section>
+
+      <Footer></Footer>
     </div>
   );
 }
