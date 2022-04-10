@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "private": true,
 
-  "homepage": "https://The-Royal-Flush.github.io/trf-2",
 
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.1",
