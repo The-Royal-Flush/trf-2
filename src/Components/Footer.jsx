@@ -1,6 +1,6 @@
-import React from "react";
-
-function Footer() {
+import React, { useState } from "react";
+import AnimatedCursor from "react-animated-cursor";
+function Footer({ setMouseIn }) {
   return (
     <div className="footer_main_container">
       <div className="footer_upper_container">
@@ -35,5 +35,4 @@ function Footer() {
     </div>
   );
 }
-
 export default Footer;

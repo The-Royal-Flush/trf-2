@@ -4,44 +4,44 @@ import Header from "../Components/Header";
 import PresenceImg from "../images/presence-featureImg.png";
 import SlanceImg from "../images/slance-featureImg.png";
 import TRFImg from "../images/trf-featureImg.png";
-import AnimatedCursor from "react-animated-cursor"
+import AnimatedCursor from "react-animated-cursor";
 
 import { useState } from "react";
 import Img1 from "../images/Rectangle_19.svg";
 import Img2 from "../images/Rectangle_21.svg";
 import Gif1 from "../images/gif1.gif";
-import Footer from "./Footer";
+import Footer, { mouseIn } from "./Footer";
 
 function Home() {
-
+  const [mouseIn, setMouseIn] = useState(false);
   const [over, setOver] = useState(false);
   const [image, setImage] = useState(true);
+
   return (
     <div>
       <Header />
       <AnimatedCursor
         innerSize={10}
         outerSize={10}
-        color='0, 0, 0'
+        color={mouseIn === false ? "0, 0, 0" : "255, 255, 255"}
         outerAlpha={0.2}
         innerScale={0.7}
         outerScale={5}
         clickables={[
-          'a',
+          "a",
           'input[type="text"]',
           'input[type="email"]',
           'input[type="number"]',
           'input[type="submit"]',
           'input[type="image"]',
-          'label[for]',
-          'select',
-          'img',
-          'h1',
-          'textarea',
-          'button',
-          '.link'
+          "label[for]",
+          "select",
+          "img",
+          "h1",
+          "textarea",
+          "button",
+          ".link",
         ]}
-
       />
       <section className="hero">
         <div className="heroTitle">
@@ -130,13 +130,18 @@ function Home() {
       </section>
 
       <section className="featured">
-
         <div className="featuredContent">
           <div className="featuredItem">
             <div className="featureInfo">
               <h2>Websites and Platforms</h2>
-              <h4>In our team, the designers and developers work alongside each other. It is exciting to see them in action to create products which is perfectly suited to its users.</h4>
-              <button className="btn-products  btn-service-inner">View all projects</button>
+              <h4>
+                In our team, the designers and developers work alongside each
+                other. It is exciting to see them in action to create products
+                which is perfectly suited to its users.
+              </h4>
+              <button className="btn-products  btn-service-inner">
+                View all projects
+              </button>
             </div>
             <div className="featureImg">
               <img src={PresenceImg} alt="Presence" />
@@ -146,9 +151,15 @@ function Home() {
           <div className="featuredItem">
             <div className="featureInfo">
               <h2>Design Concepts</h2>
-              <h4>We design what we think. Imaginations come to life with awesome design concepts and prototypes presented. We make people time travel!!</h4>
+              <h4>
+                We design what we think. Imaginations come to life with awesome
+                design concepts and prototypes presented. We make people time
+                travel!!
+              </h4>
               <div className="services-btn">
-                <button className="btn-products  btn-service-inner ">View all projects</button>
+                <button className="btn-products  btn-service-inner ">
+                  View all projects
+                </button>
               </div>
             </div>
             <div className="featureImg">
@@ -158,18 +169,31 @@ function Home() {
           <div className="featuredItem">
             <div className="featureInfo">
               <h2>Performance SEOs</h2>
-              <h4>Want to get yourself noticed, we have devised strategies and tools to make you visible on the web. The brands are now recognized more!</h4>
-              <button className="btn-products  btn-service-inner">View all projects</button>
+              <h4>
+                Want to get yourself noticed, we have devised strategies and
+                tools to make you visible on the web. The brands are now
+                recognized more!
+              </h4>
+              <button className="btn-products  btn-service-inner">
+                View all projects
+              </button>
             </div>
             <div className="featureImg">
               <img src={TRFImg} alt="Presence" />
             </div>
           </div>
         </div>
-
       </section>
-
-      <Footer></Footer>
+      <div
+        onMouseEnter={() => {
+          setMouseIn(true);
+        }}
+        onMouseLeave={() => {
+          setMouseIn(false);
+        }}
+      >
+        <Footer />
+      </div>
     </div>
   );
 }
