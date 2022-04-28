@@ -24,7 +24,7 @@ function Home() {
         innerSize={10}
         outerSize={10}
         color={mouseIn === false ? "0, 0, 0" : "255, 255, 255"}
-        outerAlpha={0.2}
+        outerAlpha={0.4}
         innerScale={0.7}
         outerScale={5}
         clickables={[
@@ -41,6 +41,7 @@ function Home() {
           "textarea",
           "button",
           ".link",
+          ".hamburger-react"
         ]}
       />
       <section className="hero">

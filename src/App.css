@@ -64,6 +64,8 @@ body {
   align-items: baseline;
   font-size: 20px;
   letter-spacing: -0.03em;
+  align-items: center;
+
 }
 .fd-r-rev {
   flex-direction: row-reverse;
