@@ -23,12 +23,14 @@ function Footer({ setMouseIn }) {
         </div>
         <div className="footer_socials">
           <div className="socials_upper">
-            <div>LinkedIn</div>
-            <div>Twitter</div>
-            <div>Instagram</div>
+            <span className="social_links">LinkedIn</span>
+            <span className="social_links">Twitter</span>
+            <span className="social_links">Instagram</span>
           </div>
           <div className="socials_bottom">
-            <div>Discord</div>
+            <span className="social_links">Discord</span>
+            {/* <span className="social_links">Discord</span> */}
+            {/* <span className="social_links">Discord</span> */}
           </div>
         </div>
       </div>

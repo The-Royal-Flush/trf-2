@@ -38,13 +38,15 @@ function Home() {
           "select",
           "img",
           "h1",
+          "h2",
           "textarea",
           "button",
           ".link",
-          ".hamburger-react"
+          ".hamburger-react",
+          ".social_links",
         ]}
       />
-      <section className="hero">
+      <section className="hero text-selection">
         <div className="heroTitle">
           <h6>We'll do it for you!</h6>
 

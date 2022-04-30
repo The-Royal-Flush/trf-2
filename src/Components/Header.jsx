@@ -3,15 +3,14 @@ import Logo from "../images/trfLogoBlack.svg";
 import Menu from "../images/Menu.png";
 
 import { Rotate as Hamburger } from "hamburger-react";
-import { useState } from "react/cjs/react.production.min";
 
 function Header() {
-
-
   return (
     <div>
       <div className="header">
-        <img src={Logo} className="logoImg" />
+        <Link to={'/'}>
+          <img src={Logo} className="logoImg"  />
+        </Link>
         <div className="navBar">
           <h4>menu</h4>
           {/* <img src={Menu} alt="" /> */}
