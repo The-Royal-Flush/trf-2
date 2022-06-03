@@ -8,7 +8,7 @@ function Header() {
                 <img src={Logo} className='logoImg' />
                 <div className="navBar">
                     <h4>menu</h4>
-                    <img src={Menu} alt="" />
+                    <img src={Menu} alt="Menu icon" />
                 </div>
             </div>
                 
