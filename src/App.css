@@ -1,13 +1,26 @@
 @import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
+
 @font-face {
   font-family: "Averta";
   src: local("Averta"), url(./fonts/Averta.otf) format("woff");
 }
+
+@font-face {
+  font-family: "Averta-Regular";
+  src: local("Averta-Regular"), url(./fonts/Averta-Regular.woff) format("woff");
+}
+
+@font-face {
+  font-family: "Averta-Bold";
+  src: local("Averta-Bold"), url(./fonts/Averta-Bold.woff) format("woff");
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Averta", sans-serif;
+
   line-height: 1.5;
   cursor: none;
 }
@@ -25,11 +38,59 @@ body {
   margin: auto;
 }
 
+/* Scrollbar Customization */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 10px 10px #00000000;
+  border: solid 3px #00000000;
+}
+
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 10px 10px #000;
+  border: solid 3px #00000000;
+  border-radius: 6px;
+}
+/* Scrollbar Customization End */
+
 /* Utility Class */
+
+.bw_select::-moz-selection {
+  /* Code for Firefox */
+  color: var(--bg-color);
+  background: var(--text-color);
+}
+
+.bw_select::selection {
+  color: var(--bg-color);
+  background: var(--text-color);
+}
+
+.bw_select_footer::-moz-selection {
+  /* Code for Firefox */
+  color: var(--text-color);
+  background: var(--bg-color);
+}
+
+.bw_select_footer::selection {
+  color: var(--text-color);
+  background: var(--bg-color);
+}
+
 .text-stroke {
   -webkit-text-stroke: 0.01px #939393;
   -webkit-text-fill-color: #fff;
   transition: all 0.2s ease-in-out;
+}
+
+.text-stroke::selection {
+  -webkit-text-stroke: 0.01px #fff;
+  -webkit-text-fill-color: #000;
+  transition: all 0.2s ease-in-out;
+
+  background: var(--text-color);
 }
 
 .text-stroke-v2 {
@@ -38,17 +99,20 @@ body {
   transition: all 0.2s ease-in-out;
 }
 
+.text-stroke-v2::selection {
+  -webkit-text-stroke: 0.01px #fff;
+  -webkit-text-fill-color: #000;
+  transition: all 0.2s ease-in-out;
+
+  background: var(--text-color);
+}
+
 .c-pointer:hover {
   cursor: pointer;
 }
 
 .underline {
   text-decoration: underline;
-}
-
-.text-selection::selection {
-  color: #fff !important;
-  background: #000 !important;
 }
 
 .header {
@@ -76,7 +140,6 @@ body {
   font-size: 20px;
   letter-spacing: -0.03em;
   align-items: center;
-
 }
 .fd-r-rev {
   flex-direction: row-reverse;
@@ -122,7 +185,8 @@ body {
   transition-duration: 2s;
   justify-content: space-between;
 }
-.heroHeading h1:hover,.heroHeading h2:hover {
+.heroHeading h1:hover,
+.heroHeading h2:hover {
   -webkit-text-fill-color: #000;
   -webkit-text-stroke: 0.05px #000000;
   transition: all 0.2s ease-in;
@@ -175,7 +239,8 @@ section {
 .featureInfoAbout {
   width: 400px;
 }
-.featureInfo p,.featureInfoAbout p {
+.featureInfo p,
+.featureInfoAbout p {
   /* font-size: 1.5rem;
     font-weight: 300;
     line-height: 1.5; */
@@ -185,7 +250,8 @@ section {
   font-weight: 400;
   line-height: 1;
 }
-.featureInfo h2,.featureInfoAbout h2 {
+.featureInfo h2,
+.featureInfoAbout h2 {
   /* font-size: 2.5rem; */
   font-weight: 500;
   color: var(--text-color);
@@ -195,7 +261,8 @@ section {
   line-height: 133%;
   letter-spacing: -0.03em;
 }
-.featureInfo h4,.featureInfoAbout h4 {
+.featureInfo h4,
+.featureInfoAbout h4 {
   /* font-size: 1.5rem; */
   font-weight: 300;
   /* color: var(--text-color); */
@@ -214,7 +281,7 @@ section {
   margin: 3rem auto;
   padding: 1rem 2rem;
   border-radius: 32px;
-  border: 1px solid var(--btn-color);
+  border: 1px solid #ccc;
   color: var(--text-color);
   outline: none;
   background-color: transparent;
@@ -222,7 +289,7 @@ section {
 }
 .btn-products:hover {
   transform: scale(1.1);
-  color: white;
+  color: white !important;
   box-shadow: 0px 0px 0px 0px rgba(55, 55, 55, 0.2), 0px 0px 0px #ddd,
     inset 0 -4rem 4px #000000, inset 0 0 0 transparent;
   border-color: #ffffff;
@@ -306,8 +373,6 @@ span {
   /* width: 90vw; */
   /* height: 567px; */
   /* background-image: url(./images/about-bg-hero.png); */
-  
-  
 }
 .about-hero h2 {
   margin: 1rem;
@@ -325,34 +390,41 @@ span {
   justify-content: space-around;
 }
 
-.about-head{
+.about-head {
   margin: 8rem auto 2rem auto;
   width: 90%;
-  padding: 2rem 10rem; 
+  padding: 2rem 10rem;
 }
 
-.fw-500{
+.fw-500 {
   font-weight: 500;
 }
 
-.woAreWesHeader{
-
-  margin:4rem 0 0rem 0;
+.fwb-500 {
+  font-weight: 500;
+  font-family: "Averta-Bold";
 }
 
-.imgTeamContainer{
+.lh-1 {
+  line-height: 1;
+}
+
+.woAreWesHeader {
+  margin: 4rem 0 0rem 0;
+}
+
+.imgTeamContainer {
   display: flex;
 }
 
-.imgTeamLeft{
+.imgTeamLeft {
   display: flex;
   flex-direction: column;
   width: 50%;
   margin: 12rem auto;
   align-items: flex-start;
-
 }
-.imgTeamRight{
+.imgTeamRight {
   display: flex;
   flex-direction: column;
   width: 50%;
@@ -360,7 +432,7 @@ span {
   align-items: flex-end;
 }
 
-.mb-975{
+.mb-975 {
   margin-bottom: 9.75rem;
 }
 
@@ -429,7 +501,7 @@ span {
   margin: 18px 0 0 0;
 }
 
-.footer_socials{
+.footer_socials {
   display: flex;
   /* justify-content: space-around;
   align-items: center;
@@ -438,18 +510,16 @@ span {
 
   flex-wrap: wrap;
   align-content: flex-end;
-  
 }
 
-.footer_socials span{
+.footer_socials span {
   font-weight: 100;
   color: #fff;
   font-size: 1.2rem;
-  
 }
 
-
-.socials_bottom,.socials_upper{
+.socials_bottom,
+.socials_upper {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -458,11 +528,11 @@ span {
   width: 100%;
 }
 
-.socials_bottom{
+.socials_bottom {
   margin-top: 2rem;
 }
 
-.social_links{
+.social_links {
   margin: 0 2rem;
   /* text-align: left; */
 }

@@ -2,14 +2,15 @@ import React, { useState } from "react";
 import Header from "./Header";
 import AnimatedCursor from "react-animated-cursor";
 import Footer from "./Footer";
+
 import imgAbout1 from "../images/Rectangle_19.svg";
 import imgAbout2 from "../images/Rectangle_20.svg";
 import imgAbout3 from "../images/Rectangle_21.svg";
 
-import imgPerson1 from "../images/Rectangle_22.png";
-import imgPerson2 from "../images/Rectangle_23.png";
-import imgPerson3 from "../images/Rectangle_25.png";
-import imgPerson4 from "../images/Rectangle_26.png";
+import imgPerson1 from "../images/Rectangle 26.png";
+import imgPerson2 from "../images/Rectangle 23.png";
+import imgPerson3 from "../images/Rectangle 22.png";
+import imgPerson4 from "../images/Rectangle 25.png";
 
 import { Parallax, Background } from "react-parallax";
 
@@ -51,7 +52,7 @@ function About() {
 
       <div className="about-head">
         <div className="title">
-          <h4 className="fw-500">
+          <h4 className="fw-500 bw_select">
             Imagination comes to life,
             <br />
             Ethics meets tech and creativity.
@@ -76,9 +77,9 @@ function About() {
               justifyContent: "center",
             }}
           >
-            <div className="heroHeading text-stroke-v2 c-pointer flex fjs-sa">
+            <div className="heroHeading c-pointer flex fjs-sa">
               {/* <h2>The</h2> */}
-              <h2 className="fs-100px">The Royal Flush</h2>
+              <h2 className="fs-100px text-stroke-v2">The Royal Flush</h2>
               {/* <h2>Flush</h2> */}
             </div>
           </div>
@@ -87,7 +88,7 @@ function About() {
 
       <section className="featured">
         <div className="title woAreWesHeader">
-          <h6 className="fs-60px">
+          <h6 className="fs-60px bw_select">
             Who
             <span className="text-stroke-v2"> are we ?</span>
           </h6>
@@ -95,8 +96,8 @@ function About() {
         <div className="featuredContent">
           <div className="featuredItem ">
             <div className="featureInfoAbout">
-              <h2>We are dreamers & thinkers 😇</h2>
-              <h4>
+              <h2 className="bw_select">We are dreamers & thinkers 😇</h2>
+              <h4 className="bw_select">
                 Just a bunch of college We aim a vision. Our aim is to provide
                 one of the best websites, portfolio designs, web interactions or
                 just a wireframe.
@@ -110,8 +111,8 @@ function About() {
 
           <div className="featuredItem fd-r-rev ">
             <div className="featureInfoAbout">
-              <h2>We put smile on people’s faces😄</h2>
-              <h4>
+              <h2 className="bw_select">We put smile on people’s faces😄</h2>
+              <h4 className="bw_select">
                 Keeping up with the latest design trends, we help our clients
                 gain insights on how to develop classy products that create a
                 positive impact.
@@ -124,8 +125,8 @@ function About() {
           </div>
           <div className="featuredItem">
             <div className="featureInfoAbout">
-              <h2>Help people time travel! 🌟</h2>
-              <h4>
+              <h2 className="bw_select">Help people time travel! 🌟</h2>
+              <h4 className="bw_select">
                 Have fun in doing things and make people reimagine the things
                 they want. And we got everyone’s back!
               </h4>
@@ -139,7 +140,7 @@ function About() {
 
       <section className="team">
         <div className="title woAreWesHeader">
-          <h6 className="fs-60px">
+          <h6 className="fs-60px bw_select">
             Meet the
             <span className="text-stroke-v2"> Team !</span>
           </h6>

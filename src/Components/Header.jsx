@@ -8,11 +8,11 @@ function Header() {
   return (
     <div>
       <div className="header">
-        <Link to={'/'}>
-          <img src={Logo} className="logoImg"  />
+        <Link to={"/"}>
+          <img src={Logo} className="logoImg" />
         </Link>
         <div className="navBar">
-          <h4>menu</h4>
+          <h4 className="bw_select">menu</h4>
           {/* <img src={Menu} alt="" /> */}
           <Hamburger easing="ease-in" size={20} />
         </div>
