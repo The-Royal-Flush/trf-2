@@ -9,6 +9,11 @@ import PillButton from "./PillButton";
 import { UilPaperclip } from "@iconscout/react-unicons";
 import { UilMessage } from "@iconscout/react-unicons";
 
+//firebase
+import { app } from "../firebase";
+import { getFirestore } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
+
 const ContactHeadContainer = styled.div`
   margin: 6rem auto 2rem auto;
   width: 90%;
@@ -134,9 +139,30 @@ function Contacts() {
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [about, setAbout] = React.useState("");
+  const [budget, setBudget] = useState();
+  const [type, setType] = useState([]);
+  const db = getFirestore(app);
+  const formSubmit = async () => {
+    try {
+      const docRef = await addDoc(collection(db, "form"), {
+        name: name,
+        email: email,
+        about: about,
+      });
+
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  };
 
   function searchHandler() {
-    console.log({ name: name, email: email, about: about });
+    if (!name || !email || !about) {
+      console.log("empty input");
+      return;
+    }
+    // console.log({ name: name, email: email, about: about });
+    formSubmit();
     setName("");
     setEmail("");
     setAbout("");
