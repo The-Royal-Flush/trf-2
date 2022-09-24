@@ -80,6 +80,7 @@ function Home() {
           <h6 className="text-stroke bw_select">Creations</h6>
         </div>
         <div className="featuredContent">
+          
           <div className="featuredItem">
             <div className="featureInfo">
               <p className="bw_select">Presence</p>
@@ -90,6 +91,7 @@ function Home() {
               <img src={PresenceImg} alt="Presence" />
             </div>
           </div>
+
           <div className="featuredItem">
             <div className="featureInfo">
               <p className="bw_select">Slance</p>
@@ -100,6 +102,7 @@ function Home() {
               <img src={SlanceImg} alt="Presence" />
             </div>
           </div>
+
           <div className="featuredItem">
             <div className="featureInfo">
               <p className="bw_select">TRF</p>
@@ -110,6 +113,7 @@ function Home() {
               <img src={TRFImg} alt="Presence" />
             </div>
           </div>
+
         </div>
         <button className="btn-products bw_select">View all projects</button>
       </section>
