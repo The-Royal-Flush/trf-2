@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=NTR&display=swap");
 
 @font-face {
+
   font-family: "Averta";
   src: local("Averta"), url(./fonts/Averta.otf) format("woff");
+
 }
 
 @font-face {
