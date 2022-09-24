@@ -8,6 +8,7 @@ import styled from "styled-components";
 import PillButton from "./PillButton";
 import { UilPaperclip } from "@iconscout/react-unicons";
 import { UilMessage } from "@iconscout/react-unicons";
+import BudgetPillButton from "./BudgetPillButton";
 
 //firebase
 import { app } from "../firebase";
@@ -133,7 +134,51 @@ const SubmitText = styled.div`
   }
 `;
 
+const AttachmentInput = styled.input`
+  ::file-selector-button {
+    font-weight: bold;
+    color: dodgerblue;
+    padding: 0.5em;
+    border: thin solid grey;
+    border-radius: 3px;
+  }
+`;
+
+const AttachmentLabel = styled.label`
+  display: flex;
+`;
+
+const PillBtnContainer = styled.button`
+  margin: 2rem 1rem;
+`;
+
+const Placeholder = styled.div`
+  font-weight: bold;
+  font-size: 1rem;
+`;
+
 function Contacts() {
+  const [selectedBudget, setSelectedBudget] = useState(undefined);
+
+  const [budgetData, setBudgetData] = useState([
+    {
+      name: "200-1k",
+      id: "200-1k",
+    },
+    {
+      name: "1k-5k",
+      id: "1k-5k",
+    },
+    {
+      name: "5k-10k",
+      id: "5k-10k",
+    },
+    {
+      name: "10k+",
+      id: "10k+",
+    },
+  ]);
+
   const [mouseIn, setMouseIn] = useState(false);
   const [over, setOver] = useState(false);
 
@@ -171,6 +216,13 @@ function Contacts() {
     setEmail("");
     setAbout("");
   }
+
+  const handleSelect = (e) => {
+    console.log(budgetData);
+    console.log(selectedBudget);
+    console.log(e.target.id);
+    setSelectedBudget(e.target.id);
+  };
 
   return (
     <>
@@ -227,14 +279,55 @@ function Contacts() {
         </SelectionContainerHeading>
 
         <SelectionPillContainers>
-          <PillButton text="200-1k" />
-          <PillButton text="1k-5k" />
-          <PillButton text="5k-10k" />
-          <PillButton text="> 10k" />
+          {/* {budgetData.map((budgetData.options) => {
+            return (
+              <BudgetPillButton
+                key={budgetData.options.id}
+                budgetData={budgetData}
+                setBudgetData={setBudgetData}
+                budget={budget}
+                setBudget={setBudget}
+              />
+            );
+          }) */}
+
+          {budgetData.map((budgetData) => {
+            // return <BudgetPillButton budgetData={budgetData} />;
+            return (
+              // <PillBtnContainer
+              //   key={budgetData.id}
+              //   className="btn-products  btn-service-inner bw_select"
+              //   onClick={(e) => console.log(e)}
+              //   style={{
+              //     backgroundColor:
+              //       selectedBudget === budgetData.id ? "black" : "white",
+              //     color: selectedBudget === budgetData.id ? "white" : "black",
+              //   }}
+              // >
+              //   <Placeholder>{budgetData.name}</Placeholder>
+              // </PillBtnContainer>
+              <BudgetPillButton
+                key={budgetData.id}
+                budgetData={budgetData}
+                selectedBudget={selectedBudget}
+                setSelectedBudget={setSelectedBudget}
+              />
+            );
+          })}
         </SelectionPillContainers>
 
         <AttachmentContainer className="bw_select attach">
-          <UilPaperclip /> <AttachmentText>Add Attachment</AttachmentText>
+          <AttachmentLabel htmlFor="choose-file">
+            <UilPaperclip />
+            <AttachmentText>Add Attachment</AttachmentText>
+          </AttachmentLabel>
+          <AttachmentInput
+            name="uploadDocument"
+            type="file"
+            id="choose-file"
+            accept=".jpg,.jpeg,.pdf,doc,docx,application/msword,.png"
+            style={{ display: "none" }}
+          />
         </AttachmentContainer>
 
         <SubmitContainer
