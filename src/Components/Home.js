@@ -19,8 +19,7 @@ function Home() {
 
   return (
     <div>
-      <Header />
-      <AnimatedCursor
+      {/* <AnimatedCursor
         innerSize={10}
         outerSize={10}
         color={mouseIn === false ? "0, 0, 0" : "255, 255, 255"}
@@ -45,7 +44,7 @@ function Home() {
           ".hamburger-react",
           ".social_links",
         ]}
-      />
+      /> */}
       <section className="hero text-selection">
         <div className="heroTitle">
           <h6 className="bw_select">We'll do it for you!</h6>
@@ -199,7 +198,6 @@ function Home() {
           setMouseIn(false);
         }}
       >
-        <Footer />
       </div>
     </div>
   );

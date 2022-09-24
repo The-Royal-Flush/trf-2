@@ -24,7 +24,7 @@
   font-family: "Averta", sans-serif;
 
   line-height: 1.5;
-  cursor: none;
+  /* cursor: none; */
 }
 :root {
   --text-color: #121212;
