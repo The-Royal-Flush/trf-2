@@ -22,8 +22,7 @@ function About() {
 
   return (
     <>
-      <Header />
-      <AnimatedCursor
+      {/* <AnimatedCursor
         innerSize={10}
         outerSize={10}
         color={mouseIn === false ? "0, 0, 0" : "255, 255, 255"}
@@ -48,7 +47,7 @@ function About() {
           ".hamburger-react",
           ".social_links",
         ]}
-      />
+      /> */}
 
       <div className="about-head">
         <div className="title">
@@ -166,7 +165,6 @@ function About() {
           setMouseIn(false);
         }}
       >
-        <Footer />
       </div>
     </>
   );

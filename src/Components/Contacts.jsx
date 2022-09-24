@@ -144,8 +144,7 @@ function Contacts() {
 
   return (
     <>
-      <Header />
-      <AnimatedCursor
+      {/* <AnimatedCursor
         innerSize={10}
         outerSize={10}
         color={mouseIn === false ? "0, 0, 0" : "255, 255, 255"}
@@ -172,7 +171,7 @@ function Contacts() {
           ".attach",
           ".submit",
         ]}
-      />
+      /> */}
 
       <ContactHeadContainer>
         <ContactTitleContainer>
@@ -254,7 +253,6 @@ function Contacts() {
           setMouseIn(false);
         }}
       >
-        <Footer />
       </div>
     </>
   );
