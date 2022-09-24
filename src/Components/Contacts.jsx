@@ -10,6 +10,12 @@ import { UilPaperclip } from "@iconscout/react-unicons";
 import { UilMessage } from "@iconscout/react-unicons";
 import BudgetPillButton from "./BudgetPillButton";
 
+//firebase
+import { app } from "../firebase";
+import { getFirestore } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
+
 const ContactHeadContainer = styled.div`
   margin: 6rem auto 2rem auto;
   width: 90%;
@@ -179,9 +185,33 @@ function Contacts() {
   const [name, setName] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [about, setAbout] = React.useState("");
+  const [budget, setBudget] = useState();
+  const [type, setType] = useState([]);
+  const db = getFirestore(app);
+  const storage = getStorage(app);
 
+  const formSubmit = async () => {
+    try {
+      const docRef = await addDoc(collection(db, "form"), {
+        name: name,
+        email: email,
+        about: about,
+      });
+
+      console.log("Document written with ID: ", docRef.id);
+    } catch (e) {
+      console.error("Error adding document: ", e);
+    }
+  };
+  const attachment = () => {};
   function searchHandler() {
-    console.log({ name: name, email: email, about: about });
+    if (!name || !email || !about) {
+      console.log("empty input");
+      return;
+    }
+
+    formSubmit();
+
     setName("");
     setEmail("");
     setAbout("");
@@ -196,35 +226,6 @@ function Contacts() {
 
   return (
     <>
-      {/* <AnimatedCursor
-        innerSize={10}
-        outerSize={10}
-        color={mouseIn === false ? "0, 0, 0" : "255, 255, 255"}
-        outerAlpha={0.4}
-        innerScale={0.7}
-        outerScale={5}
-        clickables={[
-          "a",
-          'input[type="text"]',
-          'input[type="email"]',
-          'input[type="number"]',
-          'input[type="submit"]',
-          'input[type="image"]',
-          "label[for]",
-          "select",
-          "img",
-          "h1",
-          "h2",
-          "textarea",
-          "button",
-          ".link",
-          ".hamburger-react",
-          ".social_links",
-          ".attach",
-          ".submit",
-        ]}
-      /> */}
-
       <ContactHeadContainer>
         <ContactTitleContainer>
           <h4 className="fw-500 bw_select lh-1">

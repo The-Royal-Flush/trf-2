@@ -27,7 +27,6 @@ const SidebarContainer = styled.div`
   background: #fff;
   width: 689px;
   left: auto;
-
 `;
 const MenuContainer = styled.div`
   padding: 0 98px;
@@ -145,7 +144,7 @@ function Navbar({ setOpen }) {
   ];
   return (
     <div>
-      <Container onClick={()=>setOpen(false)} />
+      <Container onClick={() => setOpen(false)} />
       <SidebarContainer>
         <MenuContainer>
           <MenuMainContainer>
