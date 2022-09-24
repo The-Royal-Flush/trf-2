@@ -13,7 +13,12 @@ import { UilMessage } from "@iconscout/react-unicons";
 import { app } from "../firebase";
 import { getFirestore } from "firebase/firestore";
 import { collection, addDoc } from "firebase/firestore";
-import { getStorage } from "firebase/storage";
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "firebase/storage";
 
 const ContactHeadContainer = styled.div`
   margin: 6rem auto 2rem auto;
@@ -79,7 +84,7 @@ const AttachmentContainer = styled.div`
   width: fit-content;
 `;
 
-const AttachmentText = styled.div`
+const AttachmentText = styled.input`
   font-weight: bold;
   font-size: 22px;
 
@@ -142,6 +147,7 @@ function Contacts() {
   const [about, setAbout] = React.useState("");
   const [budget, setBudget] = useState();
   const [type, setType] = useState([]);
+  const [percent, setPercent] = useState();
   const db = getFirestore(app);
   const storage = getStorage(app);
 
@@ -158,14 +164,48 @@ function Contacts() {
       console.error("Error adding document: ", e);
     }
   };
-  const attachment = () => {};
+
+  const [file, setFile] = useState("");
+
+  const handleAttachment = () => {
+    if (!file) {
+      return;
+    }
+    try {
+      const storageRef = ref(storage, `${file.name}`);
+      const uploadTask = uploadBytesResumable(storageRef, file);
+      uploadTask.on(
+        "state_changed",
+        (snapshot) => {
+          console.log(snapshot);
+          const percent = Math.round(
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100
+          );
+          console.log(percent);
+
+          // update progress
+          setPercent(percent);
+        },
+        (err) => console.log(err),
+        () => {
+          // download url
+          getDownloadURL(uploadTask.snapshot.ref).then((url) => {
+            console.log(url);
+          });
+        }
+      );
+    } catch (e) {
+      console.log(e);
+    }
+  };
+
   function searchHandler() {
+    handleAttachment();
     if (!name || !email || !about) {
       console.log("empty input");
       return;
     }
-
-    formSubmit();
+    // formSubmit();
 
     setName("");
     setEmail("");
@@ -234,7 +274,15 @@ function Contacts() {
         </SelectionPillContainers>
 
         <AttachmentContainer className="bw_select attach">
-          <UilPaperclip /> <AttachmentText>Add Attachment</AttachmentText>
+          <UilPaperclip />{" "}
+          <AttachmentText
+            type="file"
+            accept="image/*"
+            onChange={(e) => {
+              setFile(e.target.files[0]);
+            }}
+          />
+          {percent}
         </AttachmentContainer>
 
         <SubmitContainer
