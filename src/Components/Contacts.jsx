@@ -10,11 +10,10 @@ import { UilPaperclip } from "@iconscout/react-unicons";
 import { UilMessage } from "@iconscout/react-unicons";
 
 //firebase
-import { app } from "../firebase";
+import  { app,storage } from "../firebase";
 import { getFirestore } from "firebase/firestore";
 import { collection, addDoc } from "firebase/firestore";
 import {
-  getStorage,
   ref,
   uploadBytesResumable,
   getDownloadURL,
@@ -149,7 +148,7 @@ function Contacts() {
   const [type, setType] = useState([]);
   const [percent, setPercent] = useState();
   const db = getFirestore(app);
-  const storage = getStorage(app);
+  // const storage = getStorage(app);
 
   const formSubmit = async () => {
     try {
