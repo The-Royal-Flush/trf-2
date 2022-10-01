@@ -1,13 +1,8 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import React from "react";
-import Header from "./Header";
-import AnimatedCursor from "react-animated-cursor";
-import Footer from "./Footer";
-import styled from "styled-components";
 
 import PillButton from "./PillButton";
 import { UilPaperclip } from "@iconscout/react-unicons";
-import { UilMessage } from "@iconscout/react-unicons";
 import BudgetPillButton from "./BudgetPillButton";
 
 //firebase
@@ -16,146 +11,23 @@ import { getFirestore } from "firebase/firestore";
 import { collection, addDoc } from "firebase/firestore";
 import { getStorage } from "firebase/storage";
 
-const ContactHeadContainer = styled.div`
-  margin: 6rem auto 2rem auto;
-  width: 90%;
-  padding: 1rem 5rem;
-`;
-
-const ContactTitleContainer = styled.div`
-  font-size: 72px;
-  line-height: 1.2;
-`;
-
-const FormContainer = styled.div`
-  margin: 0 0 47px 0;
-  font-size: 35px;
-
-  color: #ccc;
-`;
-
-const SelectionContainerHeading = styled.div`
-  padding: 2rem 10rem 0rem;
-`;
-
-const SelectionPillContainers = styled.div`
-  display: flex;
-  padding: 0rem 9rem;
-  align-items: center;
-  justify-content: flex-start;
-  flex-wrap: wrap;
-`;
-
-const CustomTextInput = styled.input`
-  width: 60%;
-  border: none;
-  border-bottom: 1px solid #ccc;
-  margin: 2rem 10rem;
-
-  font-size: 35px;
-
-  ::placeholder {
-    /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: #ccc;
-    opacity: 1; /* Firefox */
-  }
-
-  :focus {
-    outline: none;
-    border-bottom: 2px solid #000;
-    transition: 0.2s ease-in-out all;
-  }
-`;
-
-const CustomInputContainer = styled.div``;
-
-const AttachmentContainer = styled.div`
-  padding: 1rem 10rem 0rem;
-  font-size: 35px;
-
-  display: flex;
-  align-items: center;
-  color: #000;
-
-  width: fit-content;
-`;
-
-const AttachmentText = styled.div`
-  font-weight: bold;
-  font-size: 22px;
-
-  width: fit-content;
-  padding-bottom: 1px;
-
-  transition: all 0.4s ease-in-out;
-
-  border-bottom: 2px solid #fff;
-
-  :hover {
-    border-bottom: 2px solid #000;
-    width: fit-content;
-    padding-bottom: 1px;
-  }
-`;
-
-const SubmitContainer = styled.div`
-  padding: 4rem 10rem 4rem;
-  font-size: 35px;
-
-  display: flex;
-  align-items: center;
-
-  width: fit-content;
-`;
-
-const SubmitText = styled.div`
-  border-bottom: 2px solid #ccc;
-  color: #ccc;
-  padding-bottom: 1px;
-  transition: all 0.4s ease-in-out;
-  width: fit-content;
-
-  font-weight: bold;
-
-  font-size: 22px;
-
-  :hover {
-    border-bottom: 2px solid #000;
-    color: #000;
-    padding-bottom: 1px;
-    width: fit-content;
-  }
-
-  :active {
-    border-bottom: 2px solid #000;
-    color: #000;
-    padding-bottom: 1px;
-    width: fit-content;
-  }
-`;
-
-const AttachmentInput = styled.input`
-  ::file-selector-button {
-    font-weight: bold;
-    color: dodgerblue;
-    padding: 0.5em;
-    border: thin solid grey;
-    border-radius: 3px;
-  }
-`;
-
-const AttachmentLabel = styled.label`
-  display: flex;
-`;
-
-const PillBtnContainer = styled.button`
-  margin: 2rem 1rem;
-`;
-
-const Placeholder = styled.div`
-  font-weight: bold;
-  font-size: 1rem;
-`;
+import {
+  Placeholder,
+  PillBtnContainer,
+  AttachmentLabel,
+  AttachmentInput,
+  SubmitText,
+  SubmitContainer,
+  AttachmentText,
+  AttachmentContainer,
+  CustomInputContainer,
+  CustomTextInput,
+  SelectionPillContainers,
+  SelectionContainerHeading,
+  FormContainer,
+  ContactTitleContainer,
+  ContactHeadContainer,
+} from "../styles/Contacts.style";
 
 function Contacts() {
   const [selectedBudget, setSelectedBudget] = useState(undefined);
@@ -279,33 +151,8 @@ function Contacts() {
         </SelectionContainerHeading>
 
         <SelectionPillContainers>
-          {/* {budgetData.map((budgetData.options) => {
-            return (
-              <BudgetPillButton
-                key={budgetData.options.id}
-                budgetData={budgetData}
-                setBudgetData={setBudgetData}
-                budget={budget}
-                setBudget={setBudget}
-              />
-            );
-          }) */}
-
           {budgetData.map((budgetData) => {
-            // return <BudgetPillButton budgetData={budgetData} />;
             return (
-              // <PillBtnContainer
-              //   key={budgetData.id}
-              //   className="btn-products  btn-service-inner bw_select"
-              //   onClick={(e) => console.log(e)}
-              //   style={{
-              //     backgroundColor:
-              //       selectedBudget === budgetData.id ? "black" : "white",
-              //     color: selectedBudget === budgetData.id ? "white" : "black",
-              //   }}
-              // >
-              //   <Placeholder>{budgetData.name}</Placeholder>
-              // </PillBtnContainer>
               <BudgetPillButton
                 key={budgetData.id}
                 budgetData={budgetData}
