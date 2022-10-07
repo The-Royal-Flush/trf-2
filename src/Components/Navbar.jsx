@@ -24,32 +24,28 @@ function Navbar({ setOpen }) {
   const socialData = [
     {
       name: "LinkedIn",
-      link: "https://www.linkedin.com/in/prantosh-verma-654873175/",
+      link: "https://www.linkedin.com/company/the-royal-flush/",
     },
     {
-      name: "LinkedIn",
-      link: "https://www.linkedin.com/in/prantosh-verma-654873175/",
+      name: "Instagram",
+      link: "https://www.instagram.com/theroyalflushtrf/",
     },
     {
-      name: "LinkedIn",
-      link: "https://www.linkedin.com/in/prantosh-verma-654873175/",
-    },
-    {
-      name: "LinkedIn",
-      link: "https://www.linkedin.com/in/prantosh-verma-654873175/",
+      name: "YouTube",
+      link: "https://www.youtube.com/channel/UCUU8w2kAMXWFrI62LRYGn2w",
     },
   ];
   const routeLink = [
     {
-      name: "Work",
-      link: "/about",
+      name: "Home",
+      link: "/",
     },
     {
-      name: "Work",
-      link: "/about",
+      name: "Contact",
+      link: "/contact",
     },
     {
-      name: "Work",
+      name: "About",
       link: "/about",
     },
   ];
@@ -75,7 +71,10 @@ function Navbar({ setOpen }) {
                 <MenuNav>
                   <MenuNavItem>
                     {routeLink.map((route) => (
-                      <MenuNavItemLink to={route.link}>
+                      <MenuNavItemLink
+                        to={route.link}
+                        onClick={() => setOpen(false)}
+                      >
                         {route.name}
                       </MenuNavItemLink>
                     ))}
