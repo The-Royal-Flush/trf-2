@@ -4,13 +4,13 @@ import { getAnalytics } from "firebase/analytics";
 // https://firebase.google.com/docs/web/setup#available-libraries
 
 const firebaseConfig = {
-  apiKey: "AIzaSyCKV7kTVaBgmfQmxT2VPzmwOtmi5Y8tSl0",
-  authDomain: "the-royal-flush.firebaseapp.com",
-  projectId: "the-royal-flush",
-  storageBucket: "the-royal-flush.appspot.com",
-  messagingSenderId: "887484860830",
-  appId: "1:887484860830:web:64fbc10fb88aee14612e8f",
-  measurementId: "G-JB6R5XKBNY",
+  apiKey: `${process.env.REACT_APP_API_KEY}`,
+  authDomain: `${process.env.REACT_APP_AUTH_DOMAIN}`,
+  projectId: `${process.env.REACT_APP_PROJECT_ID}`,
+  storageBucket: `${process.env.REACT_APP_STORAGE_BUCKET}`,
+  messagingSenderId: `${process.env.REACT_APP_MESSAGING_SENDER_ID}`,
+  appId: `${process.env.REACT_APP_APP_ID}`,
+  measurementId: `${process.env.REACT_APP_MEASUREMENT_ID}`,
 };
 
 export const app = initializeApp(firebaseConfig);
